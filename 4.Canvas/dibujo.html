@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujando con Canvas</title>
+    <style>
+        body
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color:  rgb(1, 59, 82);
+            color: white;
+        }
+        canvas
+        {
+            background-color: white;
+        }
+        h2
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dibujo en canvas</h1>
+    <article>
+        ¿Cuantas lineas quieres?
+        <select name="text" id="texto_lineas">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="40">40</option>
+            <option value="60">60</option>
+            <option value="80">80</option>
+            <option value="100">100</option>
+            <option value="120">120</option>
+            <option value="140">140</option>
+            <option value="160">160</option>
+            <option value="180">180</option>
+            <option value="200">200</option>
+            <option value="220">220</option>
+            <option value="240">240</option>
+            <option value="260">260</option>
+            <option value="280">280</option>
+            <option value="300">300</option>
+        </select>
+        <input type="button" value="A darle!" id="boton_lineas" />
+        <input type="reset" value="Limpiar" id="limpiar_lienzo" />
+    </article>
+    <br>
+    <canvas width="300" height="300" id="dibujito"></canvas>
+    <br>
+    <h2>¿Que aprendí en este ejercicio?</h2>
+    <article>
+        * Crear un objeto en el DOM con la etiqueta 'canvas'
+        <br>
+        * Configurar las dimenciones del objeto (Alto y Ancho)
+        <br>
+        * Declarar el contexto del objeto (2d)
+        <br>
+        * Dibujar en el objeto con bloque de codigo desarrollado en un archivo.js (Dibujo creado a partir de lineas rectas)
+        <br>
+        * Crear un ciclo 'for' para que dibuje un cierto numero de lineas en diferentes posisicones y colores hasta formar una imagen
+        <br>
+        * Un cliclo puede ser creado dentro de una condicion que a su vez esta alojada en una funcion
+        <br>
+        * Crear cuadros de texto con una lista desplegable con distintas opciones para el usuario
+        <br>
+        * Crear un boton enviar y vicularle un evento al boton para que ejecute un bloque de codigo según la eleccion del usuario 
+    </article>
+    <h3>Etiquetas y tecnicas aplicadas</h3>
+    <article>
+        <h4>HTLM</h4>
+            * Etiqueta: script + Atributo: src = (Usado para vicular un archivo.js a un archivo.html)
+            <br>
+            * Etiqueta: canvas + Atributos: width (ancho) y height (alto) = (Usado para crear un objeto canvas en el DOM y especificar sus dimenciones)
+            <br>
+            * Etiqueta: input + Atributos: type (tipo), value (valor) y id (identificador) = (Usado para crear cajar de texto, botones entre otros obtejos para la iteraccion del usuario)
+            <br>
+            * Etiqueta: article (articulo) = (Usada para representar un bloque de codigo contenido en un espacio especifico de la pagina web)
+            <br>
+            * Etiqueta: br (line break) = (Usada para producir un salto de linea en el texto)
+            <br>
+            * Etiqueta: h1 - h2 - h3 ... h6 (heading tags) = (Usados para crear el titulo principal 'h1' y los subtitulos 'h2, h3, etc' de la pagina web)
+            <br>
+            * Etiqueta: p (paragraph) = (Usada para crear parrafos)
+            <br>
+            * Etiqueta: select + Atributos: name (nombre) y id (identificador) + Etiqueta: option = (Usado para crear una caja de texto con despliegue de menú y definición de opciones)
+        <h4>Java Script</h4>
+            * Se utiliso un ciclo 'for' dentro de una condicion 'if' y 'else if' que a su vez esta dentro de una funcion creada
+    </article>
+    <h2>Ejercicio</h2>
+    <h3>¿Conoces las banderas de los departamentos de Colombia? </h3>
+    <p>
+        Que más parcero, vamos a repasar las banderas de los departamentos de Colombia. Vamos pues...
+        <p>
+            ¿Que bandera quieres consultar?</p>
+    </p>
+    <p>
+        <select name="Municipio" id="texto_banderas">
+            <optgroup label="País">
+                <option value="Colombia">Colombia</option>
+            </optgroup>
+            <optgroup label="Municipios">                
+                <option value="Amazonas">Amazonas</option>
+                <option value="Antioquia">Antioquia</option>
+                <option value="Arauca">Arauca</option>
+                <option value="Atlántico">Atlántico</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Bolívar">Bolívar</option>
+                <option value="Boyacá">Boyacá</option>
+                <option value="Caldas">Caldas</option>
+                <option value="Caquetá">Caquetá</option>
+                <option value="Casanere">Casanere</option>
+                <option value="Cauca">Cauca</option>
+                <option value="Cesar">Cesar</option>
+                <option value="Chocó">Chocó</option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Cundinamarca">Cundinamarca</option>
+                <option value="Guainía">Guainía</option>
+                <option value="Guaviare">Guaviare</option>
+                <option value="Huila">Huila</option>
+                <option value="La Guajira">La Guajira</option>
+                <option value="Magdalena">Magdalena</option>
+                <option value="Meta">Meta</option>
+                <option value="Nariño">Nariño</option>
+                <option value="Norte de Santander">Norte de Santander</option>
+                <option value="Putumayo">Putumayo</option>
+                <option value="Quindío">Quindío</option>
+                <option value="Risaralda">Risaralda</option>
+                <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                <option value="Santander">Santander</option>
+                <option value="Sucre">Sucre</option>
+                <option value="Tolima">Tolima</option>
+                <option value="Valle del Cauca">Valle del Cauca</option>
+                <option value="Vaupés">Vaupés</option>
+                <option value="Vichada">Vichada</option>
+            </optgroup>
+        </select>
+        <input type="button" value="Vamos!" id="boton_banderas" />
+        <input type="reset" value="Limpiar" id="limpiar_lienzo" />
+    </p>
+    <canvas width="428.5" height="300" id="banderas"></canvas>
+    <br>        
+    <script src="codigoDibujo1.js"></script>
+    <script src="codigoDibujo.js"></script>   
+</body>
+</html>
